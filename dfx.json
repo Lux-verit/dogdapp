@@ -1,0 +1,46 @@
+{
+  "canisters": {
+    "hub": {
+      "type": "motoko",
+      "main": "./src/hub/main.mo"
+    },
+    "avatar": {
+      "type": "motoko",
+      "main": "./src/avatar/main.mo"
+    },
+    "accessories": {
+      "type": "motoko",
+      "main": "./src/accessories/main.mo"
+    },
+    "invoice": {
+      "type": "motoko",
+      "main": "./src/invoice/main.mo"
+    },
+    "ledger": {
+      "type": "custom",
+      "candid": "src/ledger/ledger.public.did",
+      "wasm": "src/ledger/ledger.wasm"
+    },
+    "website": {
+      "frontend": {
+        "entrypoint": "./src/website/dist/index.html"
+      },
+      "source": ["./src/website/dist/"],
+      "type": "assets"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "--hide-warnings",
+      "packtool": "vessel sources"
+    }
+  },
+  "dfx": "0.15.1",
+  "networks": {
+    "local": {
+      "bind": "127.0.0.1:8000",
+      "type": "ephemeral"
+    }
+  },
+  "version": 1
+}
